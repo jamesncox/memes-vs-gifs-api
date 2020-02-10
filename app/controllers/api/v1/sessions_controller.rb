@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  #test change
+  
   def new
 
   end
