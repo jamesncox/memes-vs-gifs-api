@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  caption_id: 1
+  text: MyText
+  rating: MyString
+  selectable_id: 1
+  selectable_type: MyString
+
+two:
+  caption_id: 1
+  text: MyText
+  rating: MyString
+  selectable_id: 1
+  selectable_type: MyString
