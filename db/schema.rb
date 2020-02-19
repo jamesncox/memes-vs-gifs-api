@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_19_200741) do
+ActiveRecord::Schema.define(version: 2020_02_19_214646) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "captions", force: :cascade do |t|
-    t.integer "caption_id"
     t.text "text"
     t.string "rating"
     t.integer "commentable_id"
