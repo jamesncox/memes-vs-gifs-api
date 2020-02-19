@@ -1,3 +1,3 @@
 class Caption < ApplicationRecord
-    belongs_to :selectable, polymorphic: true
+    belongs_to :commentable, polymorphic: true
 end

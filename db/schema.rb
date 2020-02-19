@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_15_141706) do
+ActiveRecord::Schema.define(version: 2020_02_19_200741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 2020_02_15_141706) do
     t.integer "caption_id"
     t.text "text"
     t.string "rating"
-    t.integer "selectable_id"
-    t.string "selectable_type"
+    t.integer "commentable_id"
+    t.string "commentable_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
