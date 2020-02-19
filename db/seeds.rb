@@ -67,7 +67,7 @@ captions = [
         text: "When your son asks you to help him look for the Halloween candy you ate last night",
         rating: "PG"
     },
-    
+    {
         text: "When someone says they love running",
         rating: "PG"
     },
