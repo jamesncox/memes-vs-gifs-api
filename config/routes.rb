@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :gifs
-      resources :memes
-      resources :captions
+      
+      resources :gifs do
+        resources :captions
+      end
+      
+      resources :memes do
+        resources :captions
+      end
 
       resources :users do
 
