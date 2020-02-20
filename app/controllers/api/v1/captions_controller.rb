@@ -1,11 +1,15 @@
 class CaptionsController < ApplicationController
+    # Do I need a before action?
+    before_action :load_captionable
 
     def index
-        @captions = Caption.all 
+        # Is this syntax correct?
+        @captions = @captionable.captions
         render json: @captions, status: 200
     end
 
     def show
+        # Do I repeat the @captionable.captions pattern in the rest of the actions?
         @caption = Caption.find_by(:id params[:id])
         render json: @caption, status: 200
     end
@@ -30,5 +34,10 @@ class CaptionsController < ApplicationController
         def caption_params
             params.require(:caption).permit(:text, :rating)
         end
+
+        def load_captions
+
+        end
         
 end
+
