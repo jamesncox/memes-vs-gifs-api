@@ -3,16 +3,18 @@ Rails.application.routes.draw do
     namespace :v1 do
       
       resources :gifs do
-        resources :captions
+        # resources :captions
       end
       
       resources :memes do
-        resources :captions
+        # resources :captions
       end
 
       resources :users do
 
       end
+
+      resources :captions
     end
   end
 
