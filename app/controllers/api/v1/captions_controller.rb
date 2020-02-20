@@ -1,4 +1,4 @@
-class CaptionsController < ApplicationController
+class Api::V1::CaptionsController < ApplicationController
 
     def index
         @captions = Caption.all

@@ -1,4 +1,4 @@
-class GifsController < ApplicationController
+class Api::V1::GifsController < ApplicationController
 
     def index
         @gifs = Gif.all 
