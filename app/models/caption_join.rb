@@ -1,0 +1,2 @@
+class CaptionJoin < ApplicationRecord
+end

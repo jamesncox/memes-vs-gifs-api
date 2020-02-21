@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_20_155209) do
+ActiveRecord::Schema.define(version: 2020_02_21_220219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "caption_joins", force: :cascade do |t|
+    t.integer "caption_id"
+    t.integer "captionable_id"
+    t.string "captionable_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["captionable_id", "captionable_type"], name: "index_caption_joins_on_captionable_id_and_captionable_type"
+  end
 
   create_table "captions", force: :cascade do |t|
     t.text "text"
