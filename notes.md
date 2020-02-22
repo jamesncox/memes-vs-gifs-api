@@ -41,4 +41,10 @@
         Saved Gifs show page (any saved gifs, with name of user)
         User profile page that shows only that user's saved memes and gifs.
 
+join table: joining a captions to captionable
+join table CaptionCaptionable
+
+captions has_many CaptionCaptionable, 
+has_many captionable through captionCaptionable
+
 
