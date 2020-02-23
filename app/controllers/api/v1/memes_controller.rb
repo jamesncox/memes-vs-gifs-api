@@ -7,7 +7,7 @@ class Api::V1::MemesController < ApplicationController
 
     def show
         @meme = Meme.find_by(id: params[:id])
-        render json: @meme, include: :caption, status: 200
+        render json: @meme, include: :captions, status: 200
     end
 
     def create

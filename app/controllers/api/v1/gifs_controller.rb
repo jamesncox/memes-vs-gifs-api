@@ -7,7 +7,7 @@ class Api::V1::GifsController < ApplicationController
 
     def show
         @gif = Gif.find_by(id: params[:id])
-        render json: @gif, status: 200
+        render json: @gif, include: :captions, status: 200
     end
 
     def create
@@ -18,7 +18,7 @@ class Api::V1::GifsController < ApplicationController
     def update
         @gif = Gif.find_by(id: params[:id])
         @gif.update(gif_params)
-        render json: @gif, include: :caption, status: 200
+        render json: @gif, include: :captions, status: 200
     end
 
     def destroy
