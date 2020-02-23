@@ -11,8 +11,15 @@ class Api::V1::CaptionsController < ApplicationController
     end
 
     def create
-        @caption = Caption.create(caption_params)
-        render json: @caption, status: 200
+        @caption = Caption.new(caption_params)
+        if @caption.save
+            render json: @caption, status: 200
+        else 
+            render json: {error: @caption.errors.full_messages}
+        end
+
+        # @caption = Caption.create(caption_params)
+        # render json: @caption, status: 200
     end
 
     def update
