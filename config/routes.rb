@@ -15,8 +15,8 @@ Rails.application.routes.draw do
       end
 
       resources :captions
-      # resources :caption_joins
-      post "/saved-memes" => "caption_joins#create"
+      resources :caption_joins
+      # post "/saved-memes" => "caption_joins#create"
     end
   end
 
