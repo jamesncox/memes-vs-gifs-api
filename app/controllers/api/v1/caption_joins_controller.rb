@@ -26,6 +26,7 @@ class Api::V1::CaptionJoinsController < ApplicationController
     private
         def caption_join_params
             # something is wrong with my params they way they are written, either in schema, or front end? Namespacing doesn't match?
+            # also I will have to change my gif :url and meme :url attributes to :gif_url and :meme_url
             params.require(:caption_join).permit(:caption_id, :captionable_id, :captionable_type, :meme_id, :gif_id, :url, :text, :rating)
         end
 end
