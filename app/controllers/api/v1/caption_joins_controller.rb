@@ -1,19 +1,19 @@
 class Api::V1::CaptionJoinsController < ApplicationController
     def create
         byebug
-        if params[:meme_id]
-            captionable = Meme.find(params[:meme_id])
-        else params[:gif_id]
-            captionable = Gif.find(params[:gif_id])
-        end
-        caption = captionable.captions.new(caption_params)
-        # caption.user = current_user
-        if caption.save 
-            #render json:
-        else
-            #render json:
-        end
-    end
+        caption = Caption.find(params[:caption_id])
+                if params[:meme_id]
+                    captionable = Meme.find(params[:meme_id])
+                else
+                    captionable = Gif.find(params[:gif_id])
+                end
+                caption_join = CaptionJoin.find_or_create_by(caption: caption, captionable: captionable)
+                     if caption_join.save 
+                        render json: {error: false}
+                      else
+                       render json: {error: true}
+                     end
+            end
 
     private
         def caption_join_params
