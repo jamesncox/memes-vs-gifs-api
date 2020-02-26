@@ -10,9 +10,7 @@ Rails.application.routes.draw do
         # resources :captions
       end
 
-      resources :users do
-
-      end
+      resources :users, only: [:show, :create, :destroy]
 
       resources :captions
       resources :caption_joins

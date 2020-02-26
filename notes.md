@@ -47,4 +47,6 @@
     captions has_many CaptionCaptionable, 
     has_many captionable through captionCaptionable
 
+[] user stuff
+    on: :create, for password_confirmation
 

@@ -11,13 +11,6 @@ class Api::V1::MemesController < ApplicationController
     end
 
     def create
-        # @meme = Meme.new(meme_params)
-        # if @meme.save
-        #     render json: @meme, include: :caption, status: 200
-        # else 
-        #     render json: {error: @meme.errors.full_messages}
-        # end
-
         @meme = Meme.create(meme_params)
         render json: @meme, status: 200
     end

@@ -10,31 +10,9 @@ class Api::V1::CaptionsController < ApplicationController
         render json: @caption, status: 200
     end
 
-    # def create
-    #     @caption = Caption.new(caption_params)
-    #     if @caption.save
-    #         render json: @caption, status: 200
-    #     else 
-    #         render json: {error: @caption.errors.full_messages}
-    #     end
-
-    #     # @caption = Caption.create(caption_params)
-    #     # render json: @caption, status: 200
-    # end
-
     def create
-        if params[:meme_id]
-            captionable = Meme.find(params[:meme_id])
-        else params[:gif_id]
-            captionable = Gif.find(params[:gif_id])
-        end
-        caption = captionable.captions.new(caption_params)
-        caption.user = current_user
-        if caption.save 
-            #render json:
-        else
-            #render json:
-        end
+        @caption = Caption.create(caption_params)
+        render json: @caption, status: 200
     end
 
     def update
