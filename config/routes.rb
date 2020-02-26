@@ -18,6 +18,9 @@ Rails.application.routes.draw do
     end
   end
 
+  #sessions CSRF-TOKEN route
+  get '/auth-check' => 'sessions#auth_check'
+
   get "/auth" => 'sessions#auth'
   get "/signup" => "accounts#new", as: "signup"
   post "/signup" => "accounts#create"
