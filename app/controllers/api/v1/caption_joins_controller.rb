@@ -24,7 +24,8 @@ class Api::V1::CaptionJoinsController < ApplicationController
         def caption_join_params
             params.require(:caption_join).permit(
                 :caption_id, 
-                :text, :meme_id, 
+                :text, 
+                :meme_id, 
                 :meme_url, 
                 :gif_id, 
                 :gif_url
