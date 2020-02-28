@@ -14,12 +14,11 @@ Rails.application.routes.draw do
 
       resources :captions
       resources :caption_joins
-      # post "/saved-memes" => "caption_joins#create"
     end
   end
 
   #sessions CSRF-TOKEN route
-  get '/auth-check' => 'sessions#auth_check'
+  get '/api/v1/auth-check' => 'api/v1/sessions#auth_check'
 
   get "/auth" => 'sessions#auth'
   get "/signup" => "accounts#new", as: "signup"

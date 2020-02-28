@@ -5,7 +5,7 @@ class Api::V1::SessionsController < ApplicationController
   end
 
   def auth_check
-    logged_in?
+    # logged_in?
     render json: {csrf_auth_token: form_authenticity_token}
   end
   
