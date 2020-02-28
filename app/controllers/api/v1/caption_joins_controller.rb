@@ -12,11 +12,12 @@ class Api::V1::CaptionJoinsController < ApplicationController
         if params[:meme_id]
             meme = Meme.find_or_create_by(meme_id: params[:meme_id], meme_url: params[:meme_url])
             CaptionJoin.create(caption: caption, captionable: meme)
-            render json: { message: "success" }
+            #what do I put with this include to send the CaptionJoin id, to make the key in SavedMemes.js
+            render json: meme, include: :captions
         else
             gif = Gif.find_or_create_by(gif_id: params[:gif_id], gif_url: params[:gif_url])
             CaptionJoin.create(caption: caption, captionable: gif)
-            render json: { message: "success" }
+            render json: gif, include: :captions
         end
     end
 
