@@ -20,12 +20,12 @@ Rails.application.routes.draw do
   #sessions CSRF-TOKEN route
   get '/api/v1/auth-check' => 'api/v1/sessions#auth_check'
 
-  get "/auth" => 'sessions#auth'
-  get "/signup" => "accounts#new", as: "signup"
-  post "/signup" => "accounts#create"
-  get "/login" => "sessions#new", as: "login"
-  post "/login" => "sessions#create"
-  delete "/logout" => "sessions#destroy"
+  # get "/auth" => 'sessions#auth'
+  # get "/signup" => "accounts#new", as: "signup"
+  # post "/avp/v1/signup" => "/api/v1/users#create"
+  # get "/login" => "sessions#new", as: "login"
+  # post "/login" => "sessions#create"
+  # delete "/logout" => "sessions#destroy"
 
    # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

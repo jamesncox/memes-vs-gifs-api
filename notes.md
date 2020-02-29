@@ -35,11 +35,11 @@
 
 [x] Replace the captions fetch in React with rails/api captions json.
 
-[]  In React, have to create the following components:
+[x]  In React, have to create the following components:
         User sign-up/login form.
         Saved Memes show page (any saved meme, with name of user)
         Saved Gifs show page (any saved gifs, with name of user)
-        User profile page that shows only that user's saved memes and gifs.
+      []  User profile page that shows only that user's saved memes and gifs.
 
 [x]join table: joining a captions to captionable
     join table CaptionCaptionable
@@ -47,6 +47,10 @@
     captions has_many CaptionCaptionable, 
     has_many captionable through captionCaptionable
 
-[] user stuff
-    on: :create, for password_confirmation
+[] user 
+   [x] on: :create, for password_confirmation
+   [] display error validations:
+        [] error component with Error styled.div card
+        [] in signup form, conditional to check for errors, calls renderError() if there are errors
+        [] in User reducer store errors in state, new initial state of errors=[]
 

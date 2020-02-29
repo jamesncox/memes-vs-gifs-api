@@ -15,7 +15,7 @@ class Api::V1::SessionsController < ApplicationController
             log_in(user)
             render json: user, status: 200
         else
-            render json: { message: "Login credentials were incorrect, please try again.", error: true }
+            render json: { errors: user.errors.full_messages }
         end
   end
 
