@@ -7,16 +7,16 @@ class Api::V1::CaptionJoinsController < ApplicationController
     end
 
     def create
-        caption = Caption.find_by(id: params[:caption_id])
+        @caption = Caption.find_by(id: params[:caption_id])
 
         if params[:meme_id]
-            meme = Meme.find_or_create_by(meme_id: params[:meme_id], meme_url: params[:meme_url])
-            CaptionJoin.create(caption: caption, captionable: meme)
-            render json: meme, include: :captions
+            @meme = Meme.find_or_create_by(meme_id: params[:meme_id], meme_url: params[:meme_url])
+            CaptionJoin.create(caption: @caption, captionable: @meme)
+            render json: @meme, include: :captions
         else
-            gif = Gif.find_or_create_by(gif_id: params[:gif_id], gif_url: params[:gif_url])
-            CaptionJoin.create(caption: caption, captionable: gif)
-            render json: gif, include: :captions
+            @gif = Gif.find_or_create_by(gif_id: params[:gif_id], gif_url: params[:gif_url])
+            CaptionJoin.create(caption: @caption, captionable: @gif)
+            render json: @gif, include: :captions
         end
     end
 

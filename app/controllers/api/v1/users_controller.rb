@@ -6,7 +6,7 @@ class Api::V1::UsersController < ApplicationController
             log_in(@user)
             render json: @user, status: 200
         else
-            render json: { message: "Sorry, User could not be created, please try again.", error: true}, status: 400 
+            render json: { errors: @user.errors.full_messages }, status: 400 
         end
     end
 
