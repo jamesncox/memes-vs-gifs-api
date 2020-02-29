@@ -1,10 +1,5 @@
 class Api::V1::UsersController < ApplicationController
 
-    def new
-        @user = User.new
-        render json: @user, status: 200
-    end
-
     def create
         @user = User.new(user_params)
         if @user.save
@@ -18,6 +13,11 @@ class Api::V1::UsersController < ApplicationController
     def show
         @user = User.find(params[:id])
         render json: @user, status: 200
+    end
+
+    def destroy
+        @user.destroy
+        head :no_content
     end
 
     private
