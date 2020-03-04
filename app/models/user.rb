@@ -1,7 +1,7 @@
 class User < ApplicationRecord
+  has_many :caption_joins
   has_many :gifs, through: :caption_joins
   has_many :memes, through: :caption_joins
-  has_many :caption_joins
   has_many :captions, through: :caption_joins
 
   has_secure_password
