@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Caption.destroy_all
+
 captions = [
     {
         text: "When you suddenly have to take a shit and you're 10th in line at the porta potty",
