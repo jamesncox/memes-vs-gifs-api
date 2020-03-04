@@ -11,7 +11,6 @@ class Api::V1::CaptionsController < ApplicationController
     end
 
     def create
-        # @user = User.find_by(id: params[:user_id])
         @caption = Caption.new(caption_params)
         if @caption.save 
             render json: @caption, status: 200
