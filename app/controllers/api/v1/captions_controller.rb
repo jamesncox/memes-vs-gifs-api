@@ -11,8 +11,13 @@ class Api::V1::CaptionsController < ApplicationController
     end
 
     def create
-        @caption = Caption.create(caption_params)
-        render json: @caption, status: 200
+        # @user = User.find_by(id: params[:user_id])
+        @caption = Caption.new(caption_params)
+        if @caption.save 
+            render json: @caption, status: 200
+        else
+            render json: { errors: @caption.errors.full_messages }, status: 400 
+        end
     end
 
     def update
@@ -28,7 +33,7 @@ class Api::V1::CaptionsController < ApplicationController
 
     private
         def caption_params
-            params.require(:caption).permit(:text, :rating)
+            params.require(:caption).permit(:text, :rating, :user_id)
         end
 end
 
