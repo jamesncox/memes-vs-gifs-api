@@ -6,12 +6,10 @@ class Api::V1::CaptionJoinsController < ApplicationController
         render json: @caption_joins, status: 200
     end
 
-    # CaptionJoin.create(user: u, caption: c, captionable: m)
-
     def create
         @caption = Caption.find_by(id: params[:caption_id])
         @user = User.find_by(id: params[:user_id])
-
+   
         if params[:meme_id]
             @meme = Meme.find_or_create_by(meme_id: params[:meme_id], meme_url: params[:meme_url])
             CaptionJoin.create(user: @user, caption: @caption, captionable: @meme)
@@ -27,12 +25,13 @@ class Api::V1::CaptionJoinsController < ApplicationController
         def caption_join_params
             params.require(:caption_join).permit(
                 :caption_id, 
-                :text, 
-                :meme_id, 
-                :meme_url, 
-                :gif_id, 
-                :gif_url,
-                :user_id
+                # :text, 
+                # :meme_id, 
+                # :meme_url, 
+                # :gif_id, 
+                # :gif_url,
+                :user_id,
+                :captionable_id
                 )
         end
 end
