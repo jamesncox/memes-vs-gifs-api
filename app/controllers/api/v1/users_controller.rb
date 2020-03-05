@@ -4,11 +4,15 @@ class Api::V1::UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             log_in(@user)
-            cookies["logged_in"] = true 
             render json: @user, status: 200
         else
             render json: { errors: @user.errors.full_messages }, status: 400 
         end
+    end
+
+    def current_user
+        @user = User.find_by(id: session[:user_id])
+        render json: @user, except: [:password_digest, :created_at, :updated_at], status: 200
     end
 
     def show

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
       resources :memes
       resources :gifs
-      resources :users
+      resources :users, only: [:create, :destroy]
       resources :captions
       resources :caption_joins
 
@@ -16,6 +16,9 @@ Rails.application.routes.draw do
 
       # /login is my post fetch requeset route for logging in existing user to sessions#create action
       post '/login' => 'sessions#create'
+
+      # /current_user endpoint for a fetch on refresh in App.js, to persist User on refresh
+      get '/current_user' => 'users#current_user'
 
       # /logout is my post fetch request route for logging out of existing user's session, sessions#destroy
       # delete "/logout" => "sessions#destroy"
