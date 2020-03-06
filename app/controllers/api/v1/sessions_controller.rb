@@ -11,7 +11,7 @@ class Api::V1::SessionsController < ApplicationController
     @user = User.find_by(username: params[:user][:username])
     # byebug
         if @user && @user.authenticate(params[:user][:password])
-            session[:user_id] = user.id
+            session[:user_id] = @user.id
             cookies["logged_in"] = true 
             render json: @user, status: 200
         else
