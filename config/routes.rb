@@ -21,7 +21,7 @@ Rails.application.routes.draw do
       get '/current_user' => 'users#current_user'
 
       # /logout is my post fetch request route for logging out of existing user's session, sessions#destroy
-      # delete "/logout" => "sessions#destroy"
+      delete "/logout" => "sessions#destroy"
     end
   end
 

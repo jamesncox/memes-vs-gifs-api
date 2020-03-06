@@ -1,7 +1,5 @@
 class Api::V1::SessionsController < ApplicationController
 
-  # skip_before_action :verify_authenticity_token
-
   def auth_check
     cookies["logged_in"] = logged_in? 
     render json: {csrf_auth_token: form_authenticity_token}
@@ -20,8 +18,9 @@ class Api::V1::SessionsController < ApplicationController
   end
 
   def destroy
-     @session.delete(:user_id)
-     cookies["logged_in"] = false 
-     render json: {status: 200}
+    #  @session.delete(:user_id)
+    @session.clear
+    cookies["logged_in"] = false 
+    render json: {status: 200}
   end
 end
