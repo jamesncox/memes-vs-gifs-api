@@ -21,11 +21,7 @@ class Api::V1::SessionsController < ApplicationController
 
   def destroy
      @session.delete(:user_id)
+     cookies["logged_in"] = false 
      render json: {status: 200}
   end
-
-  # private
-  #   def session_params
-  #       params.require(:user).permit(:username, :email, :password)
-  #   end
 end
