@@ -2,7 +2,7 @@ class Api::V1::GifsController < ApplicationController
 
     def index
         @gifs = Gif.all 
-        render json: @gifs, include: :captions, status: 200
+        render json: @gifs, include: [:captions, :caption_joins], status: 200
     end
 
     def show
