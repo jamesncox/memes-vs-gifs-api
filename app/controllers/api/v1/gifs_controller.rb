@@ -22,8 +22,9 @@ class Api::V1::GifsController < ApplicationController
     end
 
     def destroy
+        @gif = Gif.find_by(id: params[:id])
         @gif.destroy
-        head :no_content
+        render json: @gif, status: 200
     end
 
     private

@@ -22,7 +22,7 @@ class Api::V1::MemesController < ApplicationController
     end
 
     def destroy
-        @meme.find_by(id: params[:id])
+        @meme = Meme.find_by(id: params[:id])
         @meme.destroy
         render json: @meme, status: 200
     end
