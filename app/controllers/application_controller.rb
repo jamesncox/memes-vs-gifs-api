@@ -4,7 +4,7 @@ class ApplicationController < ActionController::API
 
     def log_in(user)
         session[:user_id] = user.id
-        cookies["logged_in"] = true 
+        # cookies["logged_in"] = true 
     end
 
     def current_user

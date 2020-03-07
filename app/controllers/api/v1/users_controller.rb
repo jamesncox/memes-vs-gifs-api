@@ -12,7 +12,9 @@ class Api::V1::UsersController < ApplicationController
 
     def current_user
         @user = User.find_by(id: session[:user_id])
-        render json: @user, except: [:password_digest, :created_at, :updated_at], status: 200
+        if @user
+            render json: @user, except: [:password_digest, :created_at, :updated_at], status: 200
+        end
     end
 
     def show
