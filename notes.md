@@ -28,7 +28,7 @@
 
 [x] Having trouble creating a caption in Rails console, and even more trouble seeding my DB with my list of captions.
 
-[] Link my backend (Rails) to my frontend (React).
+[x] Link my backend (Rails) to my frontend (React).
         Get the CSFR Token stuff set up (I know that will mean changing around my fetches a little with the correct header info, etc.)
 
         Are my routes correct and doing the right thing?
@@ -47,10 +47,10 @@
     captions has_many CaptionCaptionable, 
     has_many captionable through captionCaptionable
 
-[] user 
+[x] user 
    [x] on: :create, for password_confirmation
-   [] display error validations:
-        [] error component with Error styled.div card
-        [] in signup form, conditional to check for errors, calls renderError() if there are errors
-        [] in User reducer store errors in state, new initial state of errors=[]
+   [x] display error validations:
+        [x] error component with Error styled.div card
+        [x] in signup form, conditional to check for errors, calls renderError() if there are errors
+        [x] in User reducer store errors in state, new initial state of errors=[]
 
