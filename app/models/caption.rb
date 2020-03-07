@@ -3,7 +3,7 @@ class Caption < ApplicationRecord
     has_many :caption_joins
     has_many :captionables, through: :caption_joins
 
-    validates :text, presence: true, uniqueness: true
+    validates :text, presence: true
     # validate :caption_rating
 
     # def caption_rating
