@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       resources :caption_joins
 
       # sessions CSRF-TOKEN route
-      get '/auth-check' => 'sessions#auth_check'
+      get '/auth_check' => 'sessions#auth_check'
 
       # /signup is my post fetch request route for signing up new user to users#create action
       post '/signup' => 'users#create'
