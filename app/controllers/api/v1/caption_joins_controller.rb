@@ -1,9 +1,8 @@
 class Api::V1::CaptionJoinsController < ApplicationController
-    # skip_before_action :verify_authenticity_token
 
     def index
         @caption_joins = CaptionJoin.all
-        render json: @caption_joins, status: 200
+        render json: @caption_joins, include: :user, status: 200
     end
 
     def create
