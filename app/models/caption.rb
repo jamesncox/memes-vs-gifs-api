@@ -3,12 +3,5 @@ class Caption < ApplicationRecord
     has_many :caption_joins
     has_many :captionables, through: :caption_joins
 
-    validates :text, presence: true
-    # validate :caption_rating
-
-    # def caption_rating
-    #     if rating != "PG" || "R"
-    #       errors.add(:caption, "You must select a PG or R rating")
-    #     end
-    # end
+    validates :text, presence: true, uniqueness: true, on: :create
 end
