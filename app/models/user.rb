@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  # test commit
   has_many :caption_joins
   has_many :captions, through: :caption_joins
   has_many :captionables, through: :caption_joins
