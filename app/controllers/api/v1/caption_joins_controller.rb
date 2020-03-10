@@ -1,5 +1,4 @@
 class Api::V1::CaptionJoinsController < ApplicationController
-    # skip_before_action :verify_authenticity_token
 
     def index
         @caption_joins = CaptionJoin.all
@@ -9,15 +8,16 @@ class Api::V1::CaptionJoinsController < ApplicationController
     def create
         @caption = Caption.find_by(id: params[:caption_id])
         @user = User.find_by(id: params[:user_id])
-   
         if params[:meme_id]
             @meme = Meme.find_or_create_by(meme_id: params[:meme_id], meme_url: params[:meme_url])
             CaptionJoin.create(user: @user, caption: @caption, captionable: @meme)
             render json: @meme, include: [:captions, :caption_joins]
-        else
+        elsif
             @gif = Gif.find_or_create_by(gif_id: params[:gif_id], gif_url: params[:gif_url])
             CaptionJoin.create(user: @user, caption: @caption, captionable: @gif)
             render json: @gif, include: [:captions, :caption_joins]
+        else
+            render json: { errors: @caption_join.errors.full_messages }, status: 400
         end
     end
 
