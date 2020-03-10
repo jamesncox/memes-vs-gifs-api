@@ -21,6 +21,12 @@ class Api::V1::CaptionJoinsController < ApplicationController
         end
     end
 
+    def destroy
+        @caption_join = CaptionJoin.find_by(id: params[:id])
+        @caption_join.destroy
+        render json: @caption_join, status: 200
+    end
+
     private
         def caption_join_params
             params.require(:caption_join).permit(
