@@ -2,7 +2,7 @@ class Api::V1::MemesController < ApplicationController
 
     def index
         @memes = Meme.all 
-        render json: @memes, include: [:captions, :caption_joins], status: 200
+        render json: @memes, include: :user, status: 200
     end
 
     def show
