@@ -3,5 +3,5 @@ class CaptionJoin < ApplicationRecord
     belongs_to :captionable, polymorphic: true, optional: true
     belongs_to :caption
 
-    # validates :captionable_id, uniqueness: true 
+    validates_uniqueness_of :captionable_id, scope: %i[caption_id user_id]
 end
