@@ -9,11 +9,11 @@ class Api::V1::CaptionJoinsController < ApplicationController
         @caption = Caption.find_by(id: params[:caption_id])
         @user = User.find_by(id: params[:user_id])
         if params[:meme_id]
-            @meme = Meme.find_or_create_by(meme_id: params[:meme_id], meme_url: params[:meme_url])
+            @meme = Meme.create(meme_id: params[:meme_id], meme_url: params[:meme_url])
             CaptionJoin.create(user: @user, caption: @caption, captionable: @meme)
             render json: @meme, include: [:captions, :caption_joins]
         elsif
-            @gif = Gif.find_or_create_by(gif_id: params[:gif_id], gif_url: params[:gif_url])
+            @gif = Gif.create(gif_id: params[:gif_id], gif_url: params[:gif_url])
             CaptionJoin.create(user: @user, caption: @caption, captionable: @gif)
             render json: @gif, include: [:captions, :caption_joins]
         else
