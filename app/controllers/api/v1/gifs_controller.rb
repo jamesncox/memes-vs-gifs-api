@@ -29,7 +29,7 @@ class Api::V1::GifsController < ApplicationController
 
     private
         def gif_params
-            params.require(:gif).permit(:gif_id, :url)
+            params.require(:gif).permit(:gif_id, :url, :username)
         end
         
 end

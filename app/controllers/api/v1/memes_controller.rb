@@ -29,6 +29,6 @@ class Api::V1::MemesController < ApplicationController
 
     private
         def meme_params
-            params.require(:meme).permit(:meme_id, :url)
+            params.require(:meme).permit(:meme_id, :url, :username)
         end
 end
