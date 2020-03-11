@@ -39,7 +39,7 @@
         User sign-up/login form.
         Saved Memes show page (any saved meme, with name of user)
         Saved Gifs show page (any saved gifs, with name of user)
-      []  User profile page that shows only that user's saved memes and gifs.
+      [x]  User profile page that shows only that user's saved memes and gifs.
 
 [x]join table: joining a captions to captionable
     join table CaptionCaptionable
