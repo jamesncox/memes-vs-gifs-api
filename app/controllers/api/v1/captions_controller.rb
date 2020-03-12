@@ -5,10 +5,10 @@ class Api::V1::CaptionsController < ApplicationController
         render json: @captions, status: 200
     end
 
-    def show
-        @caption = Caption.find_by(id: params[:id])
-        render json: @caption, status: 200
-    end
+    # def show
+    #     @caption = Caption.find_by(id: params[:id])
+    #     render json: @caption, status: 200
+    # end
 
     def create
         @caption = Caption.new(caption_params)
@@ -19,11 +19,11 @@ class Api::V1::CaptionsController < ApplicationController
         end
     end
 
-    def update
-        @caption = Caption.find_by(id: params[:id])
-        @caption.update(caption_params)
-        render json: @caption, status: 200
-    end
+    # def update
+    #     @caption = Caption.find_by(id: params[:id])
+    #     @caption.update(caption_params)
+    #     render json: @caption, status: 200
+    # end
 
     def destroy
         @caption.destroy

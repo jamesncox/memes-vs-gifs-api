@@ -5,21 +5,21 @@ class Api::V1::MemesController < ApplicationController
         render json: @memes, include: [:captions, :caption_joins], status: 200
     end
 
-    def show
-        @meme = Meme.find_by(id: params[:id])
-        render json: @meme, include: :captions, status: 200
-    end
+    # def show
+    #     @meme = Meme.find_by(id: params[:id])
+    #     render json: @meme, include: :captions, status: 200
+    # end
 
-    def create
-        @meme = Meme.create(meme_params)
-        render json: @meme, status: 200
-    end
+    # def create
+    #     @meme = Meme.create(meme_params)
+    #     render json: @meme, status: 200
+    # end
 
-    def update
-        @meme = Meme.find_by(id: params[:id])
-        @meme.update(meme_params)
-        render json: @meme, include: :caption, status: 200
-    end
+    # def update
+    #     @meme = Meme.find_by(id: params[:id])
+    #     @meme.update(meme_params)
+    #     render json: @meme, include: :caption, status: 200
+    # end
 
     def destroy
         @meme = Meme.find_by(id: params[:id])
