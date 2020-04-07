@@ -17,11 +17,6 @@ class Api::V1::UsersController < ApplicationController
         end
     end
 
-    # def show
-    #     @user = User.find(params[:id])
-    #     render json: @user, status: 200
-    # end
-
     def destroy
         @user.destroy
         head :no_content
