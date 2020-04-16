@@ -52,5 +52,7 @@
    [x] display error validations:
         [x] error component with Error styled.div card
         [x] in signup form, conditional to check for errors, calls renderError() if there are errors
-        [x] in User reducer store errors in state, new initial state of errors=[]
+        [x] in User reducer store errors in state, new initial state of errors
+
+[] CORS with netlify
 
